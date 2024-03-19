@@ -11,7 +11,7 @@ class Album extends Model
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = ['album_name', 'release_date', 'album_cover', 'artist', 'favourite_song', 'song_sample'];
 
     /**
      * The attributes excluded from the model's JSON form.
