@@ -17,6 +17,6 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/bands', 'BandController@getAll');
-$router->get('/bands/{id}', 'BandController@getOne');
+$router->get('/albums', 'AlbumController@getAll');
+$router->get('/albums/{id}', 'AlbumController@getOne');
 
