@@ -19,4 +19,6 @@ $router->get('/', function () use ($router) {
 
 $router->get('/albums', 'AlbumController@getAll');
 $router->get('/albums/{id}', 'AlbumController@getOne');
+$router->get('/tracks', 'TrackController@getAll');
+$router->get('/tracks/{id}', 'TrackController@getSetlist');
 
