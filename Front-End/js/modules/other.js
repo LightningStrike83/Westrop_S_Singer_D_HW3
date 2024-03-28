@@ -20,7 +20,7 @@ export function fetchAlbumsOther() {
                         const albumDiv = document.createElement("div")
                         const albumIMG = document.createElement("img")
                         const albumArtist = document.createElement("p")
-                        albumIMG.src = `../Front-End/images/${info[count].album_cover}`
+                        albumIMG.src = `../Front-End/${info[count].album_cover}`
                         albumArtist.textContent = info[count].artist
             
                         albumDiv.setAttribute("id", `album-${count}`)
