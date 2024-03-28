@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/grid.css">
     <link rel="stylesheet" href="../css/main.css">
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/main2.js"></script>
 </head>
 <body>
     <h1 class="hidden">Albums</h1>
@@ -24,10 +24,6 @@
             </div>
     
             <div id="album-display" class="col-span-2 m-col-span-8">
-                <div v-for="album in albumsInfo">
-                    <img :src="album.album_cover" alt="">
-                    <p>{{album.artist}}</p>
-                </div>
             </div>
     
             <div id="right-arrow-con" class="col-span-1 m-col-span-2 arrow-con">
