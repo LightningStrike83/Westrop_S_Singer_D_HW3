@@ -7,9 +7,42 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/grid.css">
     <link rel="stylesheet" href="../css/main.css">
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
     <script type="module" src="js/main.js"></script>
 </head>
 <body>
     <h1 class="hidden">Albums</h1>
+
+    <div id="app">
+        <section id="instructions" class="grid-con">
+            <h3 class="col-span-full">Select An Album</h3>
+        </section>
+    
+        <section id="album-selection" class="grid-con">
+            <div id="left-arrow-con" class="col-span-1 m-col-span-2 arrow-con">
+                <p @click="previousAlbum" id="left-arrow">◄</p>
+            </div>
+    
+            <div id="album-display" class="col-span-2 m-col-span-8">
+                <div @click="displayInfo" id="image-div">
+                    <img :src="albumsInfo[count].album_cover" alt="{{albumsInfo[count].album_name}}">
+                </div>
+
+                <ul id="album-information">
+                    <li>Album Name: {{albumsInfo[count].album_name}}</li>
+                    <li>Artist: {{albumsInfo[count].artist}}</li>
+                    <li>Release Date: {{albumsInfo[count].release_date}}</li>
+                    <li>Recommended Song: {{albumsInfo[count].favourite_song}} <span @click="playAudio">Play A Sample?</span><audio id="song-sample" :src="albumsInfo[count].song_sample"></audio></li>
+                    <li @click="getPlaylist(count)">View Sountrack List</li>
+
+                    <div id="soundtrack-list"></div>
+                </ul>
+            </div>
+    
+            <div id="right-arrow-con" class="col-span-1 m-col-span-2 arrow-con">
+                <p @click="nextAlbum" id="right-arrow">►</p>
+            </div>
+        </section>
+    </div>
 </body>
 </html>

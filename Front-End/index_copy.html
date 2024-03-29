@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Library</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/grid.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module" src="js/main2.js"></script>
+</head>
+<body>
+    <h1 class="hidden">Albums</h1>
+
+    <div id="app">
+        <section id="instructions" class="grid-con">
+            <h3 class="col-span-full">Select An Album</h3>
+        </section>
+    
+        <section id="album-selection" class="grid-con">
+            <div id="left-arrow-con" class="col-span-1 m-col-span-2 arrow-con">
+                <p id="left-arrow">◄</p>
+            </div>
+    
+            <div id="album-display" class="col-span-2 m-col-span-8">
+            </div>
+    
+            <div id="right-arrow-con" class="col-span-1 m-col-span-2 arrow-con">
+                <p id="right-arrow">►</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
