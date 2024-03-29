@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../Front-End/sass/base/_typography.scss","../Front-End/sass/pages/_home.scss"],"names":[],"mappings":"AAAA,GACI,iBACA,eACA,kBCHJ,iBACI,sBACA,aAGJ,eACI,aAGJ,WACI,aACA,uBACA","file":"main.css"}
+{"version":3,"sourceRoot":"","sources":["../Front-End/sass/base/_typography.scss","../Front-End/sass/pages/_home.scss"],"names":[],"mappings":"AAAA,GACI,iBACA,eACA,kBCHJ,iBACI,sBACA,aAGJ,eACI,aACA,6BAGJ,WACI,aACA,uBACA,mBAGJ,WACI,cACA,+BACA,eACA,iBACI,YAIR,mBACI,aACA","file":"main.css"}

@@ -12,7 +12,7 @@ class AlbumController extends Controller {
      */
 
      public function getAll() {
-        $album = Album::select('album_name', 'release_date', 'album_cover', 'artist', 'favourite_song', 'song_sample')->orderBy('album_name', 'desc')->get();
+        $album = Album::select('album_name', 'release_date', 'album_cover', 'artist', 'favourite_song', 'song_sample')->orderBy('id', 'asc')->get();
         return response()->json($album);
      }
 
