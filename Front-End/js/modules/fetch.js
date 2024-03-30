@@ -1,4 +1,12 @@
 export function fetchAlbums() {
+    const imageSpinner = document.querySelector("#image-spinner")
+    let spinner = document.createElement("img")
+
+    spinner.src = "../Front-End/images/spinner.svg"
+    spinner.setAttribute("class", "spinner")
+
+    imageSpinner.remove()
+
     const albums = Vue.createApp ({
         created() {
             fetch('http://localhost/Westrop_S_Singer_D_HW3/Back-End/lumen/public/albums')
@@ -10,10 +18,23 @@ export function fetchAlbums() {
             })
             .then (info => {
                 console.log(info)
+
                 this.albumsInfo = info
+
             })
             .catch(error => {
                 console.log(error)
+
+                let errorText = document.createElement("p")
+                const errorHandle = document.querySelector("#error-handle")
+
+                errorText.setAttribute("class", "col-span-full")
+
+                errorHandle.innerHTML = ""
+
+                errorText.textContent = error
+                errorHandle.appendChild(errorText)
+
             })
         },
 
@@ -80,6 +101,10 @@ export function fetchAlbums() {
             },
 
             getPlaylist(count) {
+                const albumInformation = document.querySelector("#album-information")
+
+                albumInformation.appendChild(spinner)
+
                 fetch(`http://localhost/Westrop_S_Singer_D_HW3/Back-End/lumen/public/tracks/${count+1}`)
                 .then(response => {
                     if (!response.ok) {
@@ -89,6 +114,7 @@ export function fetchAlbums() {
                 })
                 .then(tracks => {
                     const playlist = document.querySelector("#soundtrack-list")
+                    const spinnerIMG = document.querySelectorAll(".spinner")
                     console.log(tracks)
                     let i = 1
 
@@ -101,6 +127,24 @@ export function fetchAlbums() {
 
                         i++
                     })
+
+                    spinnerIMG.forEach(spinner => {
+                        spinner.remove()
+                    })
+                })
+                .catch(error => {
+                    console.log(error)
+    
+                    let errorText = document.createElement("p")
+                    const errorHandle = document.querySelector("#error-handle")
+
+                    errorText.setAttribute("class", "col-span-full")
+
+                    errorHandle.innerHTML = ""
+    
+                    errorText.textContent = error
+                    errorHandle.appendChild(errorText)
+    
                 })
             }
         },
