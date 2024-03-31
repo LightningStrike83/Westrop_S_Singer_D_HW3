@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Album Library</title>
+    <title>FAVOURITE ALBUMS - A collaborative music library</title>
+    <link rel="stylesheet" href="https://use.typekit.net/rju8qwm.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/grid.css">
     <link rel="stylesheet" href="../css/main.css">
@@ -13,16 +14,27 @@
 <body>
     <h1 class="hidden">Albums</h1>
 
+    <header class="grid-con">
+        <div id="logo" class="col-span-full">
+            <img src="images/albums_logo.svg" alt="logo">
+        </div>
+    </header>
+
+    <div id="bg-img">
+        <img src="images/stage-bg.jpg" alt="concert stage background image">
+    </div>
+
     <div id="app">
         <section id="instructions" class="grid-con">
-            <h3 class="col-span-full">Select An Album</h3>
+            <h3 class="col-span-full">SELECT AN ALBUM</h3>
+            <h4 class="col-span-full">Click on an album cover of your choice to learn all about it, including which song is a personal favourite, and even hear a short clip!</h4>
         </section>
 
         <section id="error-handle" class="grid-con"></section>
     
         <section id="album-selection" class="grid-con">
             <div id="left-arrow-con" class="col-span-1 m-col-span-2 arrow-con">
-                <p @click="previousAlbum" id="left-arrow">◄</p>
+                <img @click="previousAlbum" id="left-arrow" src="images/pointer-left.svg" alt="left pointer: previous album" class="click">
             </div>
     
             <div id="album-display" class="col-span-2 m-col-span-8">
@@ -31,19 +43,30 @@
                     <img :src="albumsInfo[count].album_cover" alt="{{albumsInfo[count].album_name}}">
                 </div>
 
-                <ul id="album-information">
-                    <li>Album Name: {{albumsInfo[count].album_name}}</li>
-                    <li>Artist: {{albumsInfo[count].artist}}</li>
-                    <li>Release Date: {{albumsInfo[count].release_date}}</li>
-                    <li>Recommended Song: {{albumsInfo[count].favourite_song}} <span @click="playAudio">Play A Sample?</span><audio id="song-sample" :src="albumsInfo[count].song_sample"></audio></li>
-                    <li @click="getPlaylist(count)">View Sountrack List</li>
+                <ul id="album-information" class="col-span-full m-col-span-4">
+                    <li><span class="bold">Album Name: </span>{{albumsInfo[count].album_name}}</li>
+                    <li><span class="bold">Artist: </span>{{albumsInfo[count].artist}}</li>
+                    <li><span class="bold">Release Date: </span>{{albumsInfo[count].release_date}}</li>
+                    <li><span class="bold">Recommended Song: </span>{{albumsInfo[count].favourite_song}}
+                        <br>
+                        <span class="bold click" @click="playAudio">
+                            PLAY A SAMPLE
+                            <img class="small-icon click" src="images/play.svg" alt="play icon">
+                        </span>
+                        <audio id="song-sample" :src="albumsInfo[count].song_sample"></audio>
+                    </li>
+                    <li @click="getPlaylist(count)">
+                        <img class="small-icon click" src="images/pointer-down.svg" alt="down pointer: expand track list">
+                        <span class="bold click">VIEW TRACK LIST</span>
+                        <img class="small-icon click" src="images/pointer-down.svg" alt="down pointer: expand track list">
+                    </li>
 
                     <div id="soundtrack-list"></div>
                 </ul>
             </div>
     
             <div id="right-arrow-con" class="col-span-1 m-col-span-2 arrow-con">
-                <p @click="nextAlbum" id="right-arrow">►</p>
+                <img @click="nextAlbum" id="right-arrow" src="images/pointer-right.svg" alt="right pointer: next album" class="click">
             </div>
         </section>
     </div>
