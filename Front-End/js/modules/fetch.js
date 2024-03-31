@@ -65,10 +65,10 @@ export function fetchAlbums() {
                 const albumInformation = document.querySelector("#album-information")
 
                 if (albumInformation.style.display === "block") {
-                    imageDiv.style.maxWidth = "70%"
+                    // imageDiv.style.maxWidth = "70%"
                     albumInformation.style.display = "none"
                 } else {
-                    imageDiv.style.maxWidth = "50%"
+                    // imageDiv.style.maxWidth = "50%"
                     albumInformation.style.display = "block"
                 }
             },

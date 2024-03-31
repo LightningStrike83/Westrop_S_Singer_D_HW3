@@ -1,0 +1,21 @@
+.click {
+transition: all 0.3s ease-in-out;
+    &:hover, &:active {
+        cursor: pointer;
+        color: #e2706d;
+    }
+}
+
+.small-icon {
+    max-height: 20px;
+    max-width: 20px;
+}
+
+#album-information {
+    margin-left: 20px;
+}
+
+ul li {
+    font-size: 18px;
+    margin-top: 10px;
+}
