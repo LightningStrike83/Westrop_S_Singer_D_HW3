@@ -29,6 +29,8 @@
             <h3 class="col-span-full">SELECT AN ALBUM</h3>
             <h4 class="col-span-full">Click on an album cover of your choice to learn all about it, including which song is a personal favourite, and even hear a short clip!</h4>
         </section>
+
+        <section id="error-handle" class="grid-con"></section>
     
         <section id="album-selection" class="grid-con">
             <div id="left-arrow-con" class="col-span-1 m-col-span-2 arrow-con">
@@ -37,7 +39,8 @@
     
             <div id="album-display" class="col-span-2 m-col-span-8">
                 <div @click="displayInfo" id="image-div">
-                    <img :src="albumsInfo[count].album_cover" alt="{{albumsInfo[count].album_name}}" class="click">
+                    <img id="image-spinner" src="images/spinner.svg" alt="">
+                    <img :src="albumsInfo[count].album_cover" alt="{{albumsInfo[count].album_name}}">
                 </div>
 
                 <ul id="album-information" class="col-span-full m-col-span-4">
