@@ -102,6 +102,9 @@ export function fetchAlbums() {
 
             getPlaylist(count) {
                 const albumInformation = document.querySelector("#album-information")
+                const soundtrackList = document.querySelector("#soundtrack-list")
+
+                soundtrackList.innerHTML = ""
 
                 albumInformation.appendChild(spinner)
 
