@@ -2,7 +2,7 @@
 transition: all 0.3s ease-in-out;
     &:hover, &:active {
         cursor: pointer;
-        color: #e2706d;
+        text-shadow: #e2706d 0 0 6px;
     }
 }
 
@@ -18,4 +18,9 @@ transition: all 0.3s ease-in-out;
 ul li {
     font-size: 18px;
     margin-top: 10px;
+}
+
+.red {
+    color: #e2706d;
+    text-shadow: #000000 2px 0 3px;
 }

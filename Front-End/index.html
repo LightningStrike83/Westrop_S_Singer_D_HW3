@@ -44,18 +44,20 @@
                 </div>
 
                 <ul id="album-information" class="col-span-full m-col-span-4">
-                    <li><span class="bold">Album Name: </span>{{albumsInfo[count].album_name}}</li>
-                    <li><span class="bold">Artist: </span>{{albumsInfo[count].artist}}</li>
-                    <li><span class="bold">Release Date: </span>{{albumsInfo[count].release_date}}</li>
-                    <li><span class="bold">Recommended Song: </span>{{albumsInfo[count].favourite_song}}
+                    <li><span class="bold red">Album Name: </span>{{albumsInfo[count].album_name}}</li>
+                    <li><span class="bold red">Artist: </span>{{albumsInfo[count].artist}}</li>
+                    <li><span class="bold red">Release Date: </span>{{albumsInfo[count].release_date}}</li>
+                    <li><span class="bold red">Recommended Song: </span>{{albumsInfo[count].favourite_song}}
+                        <br>
                         <br>
                         <span class="bold click" @click="playAudio">
                             PLAY A SAMPLE
                             <img class="small-icon click" src="images/play.svg" alt="play icon">
                         </span>
                         <audio id="song-sample" :src="albumsInfo[count].song_sample"></audio>
+
                     </li>
-                    <li @click="getPlaylist(count)">
+                    <li @click="getPlaylist(count)" id="tracklist-toggle">
                         <img class="small-icon click" src="images/pointer-down.svg" alt="down pointer: expand track list">
                         <span class="bold click">VIEW TRACK LIST</span>
                         <img class="small-icon click" src="images/pointer-down.svg" alt="down pointer: expand track list">
