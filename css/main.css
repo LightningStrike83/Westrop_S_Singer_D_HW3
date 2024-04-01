@@ -8,6 +8,7 @@ h3 {
   font-style: normal;
   font-size: 40px;
   text-align: center;
+  text-shadow: #000000 2px 0 3px;
 }
 
 .bold {
@@ -20,12 +21,16 @@ h4 {
   padding-top: 15px;
 }
 
+p {
+  margin-top: 5px;
+}
+
 .click {
   transition: all 0.3s ease-in-out;
 }
 .click:hover, .click:active {
   cursor: pointer;
-  color: #e2706d;
+  text-shadow: #e2706d 0 0 6px;
 }
 
 .small-icon {
@@ -42,6 +47,11 @@ ul li {
   margin-top: 10px;
 }
 
+.red {
+  color: #e2706d;
+  text-shadow: #000000 2px 0 3px;
+}
+
 #bg-img {
   height: 120vh;
   width: 100vw;
@@ -49,7 +59,6 @@ ul li {
   top: 0;
   left: 0;
   z-index: -1;
-  overflow: hidden;
 }
 #bg-img img {
   width: 100%;
@@ -93,7 +102,8 @@ ul li {
 
 #album-display {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .arrow-con {
@@ -103,10 +113,13 @@ ul li {
 }
 
 #image-div {
-  transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.3s;
   cursor: pointer;
 }
-#image-div:hover {
+#image-div img {
+  transition: all ease-in-out 0.3s;
+}
+#image-div img:hover {
   opacity: 70%;
 }
 
@@ -117,4 +130,9 @@ ul li {
 
 #left-arrow, #right-arrow {
   max-width: 60px;
+}
+
+#tracklist-toggle {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }/*# sourceMappingURL=main.css.map */

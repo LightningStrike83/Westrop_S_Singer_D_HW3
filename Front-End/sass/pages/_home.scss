@@ -12,7 +12,8 @@
 
 #album-display {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .arrow-con {
@@ -22,19 +23,33 @@
 }
 
 #image-div {
+    // flex-shrink: 0;
     // max-width: 70%;
-    transition: all ease-in-out 0.5s;
+    transition: all ease-in-out 0.3s;
     cursor: pointer;
+    // &:hover, &:active {
+    //     background-color: #000;
+    // }
+    img {
+        transition: all ease-in-out 0.3s;
     &:hover {
         opacity: 70%;
+        }
     }
+    
 }
 
 #album-information {
+    // flex-shrink: 0;
     display: none;
     transition: all ease-in-out 0.5s;
 }
 
 #left-arrow, #right-arrow {
     max-width: 60px;
+}
+
+#tracklist-toggle {
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
